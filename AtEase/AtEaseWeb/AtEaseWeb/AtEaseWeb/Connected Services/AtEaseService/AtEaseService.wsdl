@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AtEaseService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IAtEaseService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ateasenewwcf.azurewebsites.net/AtEaseService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ateasenewwcf.azurewebsites.net/AtEaseService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ateasenewwcf.azurewebsites.net/AtEaseService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AtEaseWCF" />
+      <xsd:import schemaLocation="http://ateasenewwcf.azurewebsites.net/AtEaseService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAtEaseService_RegisterStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterStudent" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_RegisterStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_IsStuRegistered_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsStuRegistered" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_IsStuRegistered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsStuRegisteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_RegisterMerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterMerchant" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_RegisterMerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_IsMerchRegistered_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsMerchRegistered" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_IsMerchRegistered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsMerchRegisteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_StudentLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:StudentLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_StudentLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StudentLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_checkStudentActive_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkStudentActive" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_checkStudentActive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkStudentActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetHomeBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHomeBooks" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetHomeBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHomeBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_MerchantLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:MerchantLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_MerchantLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MerchantLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_checkMerchantActive_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkMerchantActive" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_checkMerchantActive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkMerchantActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_ManagerLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ManagerLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_ManagerLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ManagerLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_SearchBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBook" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_SearchBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBook" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetProductMerchants_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductMerchants" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetProductMerchants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductMerchantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchant" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchProduct" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_addtoQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:addtoQuote" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_addtoQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addtoQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_getStuNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:getStuNumber" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_getStuNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getStuNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_getQuoteInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQuoteInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_getQuoteInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQuoteInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removeFromQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeFromQuote" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removeFromQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeFromQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchRating" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchID" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_AllMerchProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllMerchProducts" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_AllMerchProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllMerchProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_EditMerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditMerchant" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_EditMerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_AddMerchProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMerchProduct" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_AddMerchProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMerchProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_IsNewMerchBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsNewMerchBook" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_IsNewMerchBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsNewMerchBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetAllMerchants_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMerchants" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetAllMerchants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMerchantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removeMerchProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeMerchProduct" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removeMerchProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeMerchProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_SetMerchPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMerchPrice" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_SetMerchPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMerchPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_getISBN_InputMessage">
+    <wsdl:part name="parameters" element="tns:getISBN" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_getISBN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getISBNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchReviews" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetMerchReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_setRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:setRating" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_setRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_setReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:setReview" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_setReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_setFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:setFeedback" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_setFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_getAllFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllFeedback" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_getAllFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_setIsRated_InputMessage">
+    <wsdl:part name="parameters" element="tns:setIsRated" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_setIsRated_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setIsRatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetIsRated_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsRated" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_GetIsRated_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsRatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_reportMerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:reportMerchant" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_reportMerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:reportMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removeMerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeMerchant" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removeMerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removeOwnerProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeOwnerProducts" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removeOwnerProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeOwnerProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removefromFeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:removefromFeed" />
+  </wsdl:message>
+  <wsdl:message name="IAtEaseService_removefromFeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removefromFeedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAtEaseService">
+    <wsdl:operation name="RegisterStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/RegisterStudent" message="tns:IAtEaseService_RegisterStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/RegisterStudentResponse" message="tns:IAtEaseService_RegisterStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsStuRegistered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/IsStuRegistered" message="tns:IAtEaseService_IsStuRegistered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/IsStuRegisteredResponse" message="tns:IAtEaseService_IsStuRegistered_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMerchant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/RegisterMerchant" message="tns:IAtEaseService_RegisterMerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/RegisterMerchantResponse" message="tns:IAtEaseService_RegisterMerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMerchRegistered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/IsMerchRegistered" message="tns:IAtEaseService_IsMerchRegistered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/IsMerchRegisteredResponse" message="tns:IAtEaseService_IsMerchRegistered_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/StudentLogin" message="tns:IAtEaseService_StudentLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/StudentLoginResponse" message="tns:IAtEaseService_StudentLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkStudentActive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/checkStudentActive" message="tns:IAtEaseService_checkStudentActive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/checkStudentActiveResponse" message="tns:IAtEaseService_checkStudentActive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHomeBooks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetHomeBooks" message="tns:IAtEaseService_GetHomeBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetHomeBooksResponse" message="tns:IAtEaseService_GetHomeBooks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MerchantLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/MerchantLogin" message="tns:IAtEaseService_MerchantLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/MerchantLoginResponse" message="tns:IAtEaseService_MerchantLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkMerchantActive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/checkMerchantActive" message="tns:IAtEaseService_checkMerchantActive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/checkMerchantActiveResponse" message="tns:IAtEaseService_checkMerchantActive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ManagerLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/ManagerLogin" message="tns:IAtEaseService_ManagerLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/ManagerLoginResponse" message="tns:IAtEaseService_ManagerLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/SearchBook" message="tns:IAtEaseService_SearchBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/SearchBookResponse" message="tns:IAtEaseService_SearchBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetBook" message="tns:IAtEaseService_GetBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetBookResponse" message="tns:IAtEaseService_GetBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductMerchants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetProductMerchants" message="tns:IAtEaseService_GetProductMerchants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetProductMerchantsResponse" message="tns:IAtEaseService_GetProductMerchants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchant" message="tns:IAtEaseService_GetMerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchantResponse" message="tns:IAtEaseService_GetMerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchProduct" message="tns:IAtEaseService_GetMerchProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchProductResponse" message="tns:IAtEaseService_GetMerchProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addtoQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/addtoQuote" message="tns:IAtEaseService_addtoQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/addtoQuoteResponse" message="tns:IAtEaseService_addtoQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStuNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/getStuNumber" message="tns:IAtEaseService_getStuNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/getStuNumberResponse" message="tns:IAtEaseService_getStuNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuoteInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/getQuoteInfo" message="tns:IAtEaseService_getQuoteInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/getQuoteInfoResponse" message="tns:IAtEaseService_getQuoteInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeFromQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/removeFromQuote" message="tns:IAtEaseService_removeFromQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/removeFromQuoteResponse" message="tns:IAtEaseService_removeFromQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchRating" message="tns:IAtEaseService_GetMerchRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchRatingResponse" message="tns:IAtEaseService_GetMerchRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchID" message="tns:IAtEaseService_GetMerchID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchIDResponse" message="tns:IAtEaseService_GetMerchID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AllMerchProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/AllMerchProducts" message="tns:IAtEaseService_AllMerchProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/AllMerchProductsResponse" message="tns:IAtEaseService_AllMerchProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditMerchant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/EditMerchant" message="tns:IAtEaseService_EditMerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/EditMerchantResponse" message="tns:IAtEaseService_EditMerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMerchProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/AddMerchProduct" message="tns:IAtEaseService_AddMerchProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/AddMerchProductResponse" message="tns:IAtEaseService_AddMerchProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsNewMerchBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/IsNewMerchBook" message="tns:IAtEaseService_IsNewMerchBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/IsNewMerchBookResponse" message="tns:IAtEaseService_IsNewMerchBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMerchants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetAllMerchants" message="tns:IAtEaseService_GetAllMerchants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetAllMerchantsResponse" message="tns:IAtEaseService_GetAllMerchants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeMerchProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/removeMerchProduct" message="tns:IAtEaseService_removeMerchProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/removeMerchProductResponse" message="tns:IAtEaseService_removeMerchProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMerchPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/SetMerchPrice" message="tns:IAtEaseService_SetMerchPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/SetMerchPriceResponse" message="tns:IAtEaseService_SetMerchPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getISBN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/getISBN" message="tns:IAtEaseService_getISBN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/getISBNResponse" message="tns:IAtEaseService_getISBN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchReviews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchReviews" message="tns:IAtEaseService_GetMerchReviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetMerchReviewsResponse" message="tns:IAtEaseService_GetMerchReviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/setRating" message="tns:IAtEaseService_setRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/setRatingResponse" message="tns:IAtEaseService_setRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/setReview" message="tns:IAtEaseService_setReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/setReviewResponse" message="tns:IAtEaseService_setReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/setFeedback" message="tns:IAtEaseService_setFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/setFeedbackResponse" message="tns:IAtEaseService_setFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/getAllFeedback" message="tns:IAtEaseService_getAllFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/getAllFeedbackResponse" message="tns:IAtEaseService_getAllFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setIsRated">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/setIsRated" message="tns:IAtEaseService_setIsRated_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/setIsRatedResponse" message="tns:IAtEaseService_setIsRated_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsRated">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/GetIsRated" message="tns:IAtEaseService_GetIsRated_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/GetIsRatedResponse" message="tns:IAtEaseService_GetIsRated_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="reportMerchant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/reportMerchant" message="tns:IAtEaseService_reportMerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/reportMerchantResponse" message="tns:IAtEaseService_reportMerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeMerchant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/removeMerchant" message="tns:IAtEaseService_removeMerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/removeMerchantResponse" message="tns:IAtEaseService_removeMerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeOwnerProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/removeOwnerProducts" message="tns:IAtEaseService_removeOwnerProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/removeOwnerProductsResponse" message="tns:IAtEaseService_removeOwnerProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removefromFeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAtEaseService/removefromFeed" message="tns:IAtEaseService_removefromFeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAtEaseService/removefromFeedResponse" message="tns:IAtEaseService_removefromFeed_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAtEaseService" type="tns:IAtEaseService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterStudent">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/RegisterStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsStuRegistered">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/IsStuRegistered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/RegisterMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMerchRegistered">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/IsMerchRegistered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentLogin">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/StudentLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkStudentActive">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/checkStudentActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHomeBooks">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetHomeBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MerchantLogin">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/MerchantLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkMerchantActive">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/checkMerchantActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManagerLogin">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/ManagerLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBook">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/SearchBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBook">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductMerchants">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetProductMerchants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchProduct">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtoQuote">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/addtoQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStuNumber">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/getStuNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuoteInfo">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/getQuoteInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeFromQuote">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removeFromQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchRating">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchID">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllMerchProducts">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/AllMerchProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/EditMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMerchProduct">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/AddMerchProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNewMerchBook">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/IsNewMerchBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMerchants">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetAllMerchants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeMerchProduct">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removeMerchProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMerchPrice">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/SetMerchPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getISBN">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/getISBN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchReviews">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRating">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/setRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setReview">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/setReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFeedback">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/setFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFeedback">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/getAllFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setIsRated">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/setIsRated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsRated">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetIsRated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reportMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/reportMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removeMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeOwnerProducts">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removeOwnerProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removefromFeed">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removefromFeed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IAtEaseService" type="tns:IAtEaseService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IAtEaseService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterStudent">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/RegisterStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsStuRegistered">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/IsStuRegistered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/RegisterMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMerchRegistered">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/IsMerchRegistered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentLogin">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/StudentLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkStudentActive">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/checkStudentActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHomeBooks">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetHomeBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MerchantLogin">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/MerchantLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkMerchantActive">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/checkMerchantActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManagerLogin">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/ManagerLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBook">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/SearchBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBook">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductMerchants">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetProductMerchants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchProduct">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtoQuote">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/addtoQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStuNumber">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/getStuNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuoteInfo">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/getQuoteInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeFromQuote">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removeFromQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchRating">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchID">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllMerchProducts">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/AllMerchProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/EditMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMerchProduct">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/AddMerchProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNewMerchBook">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/IsNewMerchBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMerchants">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetAllMerchants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeMerchProduct">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removeMerchProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMerchPrice">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/SetMerchPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getISBN">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/getISBN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchReviews">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetMerchReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRating">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/setRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setReview">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/setReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFeedback">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/setFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFeedback">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/getAllFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setIsRated">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/setIsRated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsRated">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/GetIsRated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reportMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/reportMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeMerchant">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removeMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeOwnerProducts">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removeOwnerProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removefromFeed">
+      <soap:operation soapAction="http://tempuri.org/IAtEaseService/removefromFeed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AtEaseService">
+    <wsdl:port name="BasicHttpBinding_IAtEaseService" binding="tns:BasicHttpBinding_IAtEaseService">
+      <soap:address location="http://ateasenewwcf.azurewebsites.net/AtEaseService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IAtEaseService" binding="tns:BasicHttpsBinding_IAtEaseService">
+      <soap:address location="https://ateasenewwcf.azurewebsites.net/AtEaseService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

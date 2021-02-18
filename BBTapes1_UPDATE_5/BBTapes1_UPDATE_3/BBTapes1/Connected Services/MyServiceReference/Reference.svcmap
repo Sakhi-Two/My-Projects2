@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="197858ad-f403-44c4-b819-f222ac1a6439" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49190/BBTapesService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BBTapesService.xsd" MetadataType="Schema" ID="72f2fe44-be4f-46a9-ac4c-076674cf66ae" SourceId="1" SourceUrl="http://localhost:49190/BBTapesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BBTapesService1.xsd" MetadataType="Schema" ID="3d263991-3ce8-4136-8195-50af0dfdcee5" SourceId="1" SourceUrl="http://localhost:49190/BBTapesService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BBTapesService.disco" MetadataType="Disco" ID="239ee7e9-320b-491b-ad9e-0da1f14642cf" SourceId="1" SourceUrl="http://localhost:49190/BBTapesService.svc?disco" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="4369e392-f29e-4721-a531-7c88d7c8acf6" SourceId="1" SourceUrl="http://localhost:49190/BBTapesService.svc?wsdl" />
+    <MetadataFile FileName="BBTapesService2.xsd" MetadataType="Schema" ID="7a2dce78-82a8-4c73-a678-e392363aaaf8" SourceId="1" SourceUrl="http://localhost:49190/BBTapesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BBTapesService3.xsd" MetadataType="Schema" ID="28104d85-83c4-4dcc-8236-e795682185ba" SourceId="1" SourceUrl="http://localhost:49190/BBTapesService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

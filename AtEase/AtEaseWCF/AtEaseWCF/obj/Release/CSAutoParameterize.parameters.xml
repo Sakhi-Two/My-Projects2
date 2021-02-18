@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ateasedataConnectionString-Web.config Connection String" description="ateasedataConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=ateaseserver.database.windows.net;Initial Catalog=ateasedata;User ID=Sakhile;Password=@ComSc98;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\csakh\\Desktop\\team10\\AtEaseWCF\\AtEaseWCF\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ateasedataConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="ateaseDataConnectionString1-Web.config Connection String" description="ateaseDataConnectionString1 Connection String used in web.config by the application to access the database." defaultValue="Data Source=ateaseserver2.database.windows.net;Initial Catalog=ateaseData;User ID=Lindo;Password=@Ntuli99;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\csakh\\Desktop\\team10\\AtEaseWCF\\AtEaseWCF\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ateaseDataConnectionString1']/@connectionString" />
+  </parameter>
+</parameters>

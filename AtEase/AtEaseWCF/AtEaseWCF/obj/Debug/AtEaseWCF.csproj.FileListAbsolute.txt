@@ -1,0 +1,14 @@
+C:\Users\Thato\Desktop\DESKTOP\Git Repos\team10\AtEaseWCF\AtEaseWCF\bin\AtEaseWCF.dll.config
+C:\Users\Thato\Desktop\DESKTOP\Git Repos\team10\AtEaseWCF\AtEaseWCF\bin\AtEaseWCF.dll
+C:\Users\Thato\Desktop\DESKTOP\Git Repos\team10\AtEaseWCF\AtEaseWCF\bin\AtEaseWCF.pdb
+C:\Users\Thato\Desktop\DESKTOP\Git Repos\team10\AtEaseWCF\AtEaseWCF\obj\Debug\AtEaseWCF.csprojAssemblyReference.cache
+C:\Users\Thato\Desktop\DESKTOP\Git Repos\team10\AtEaseWCF\AtEaseWCF\obj\Debug\AtEaseWCF.csproj.CoreCompileInputs.cache
+C:\Users\Thato\Desktop\DESKTOP\Git Repos\team10\AtEaseWCF\AtEaseWCF\obj\Debug\AtEaseWCF.dll
+C:\Users\Thato\Desktop\DESKTOP\Git Repos\team10\AtEaseWCF\AtEaseWCF\obj\Debug\AtEaseWCF.pdb
+C:\Users\csakh\Desktop\team10\AtEaseWCF\AtEaseWCF\bin\AtEaseWCF.dll.config
+C:\Users\csakh\Desktop\team10\AtEaseWCF\AtEaseWCF\bin\AtEaseWCF.dll
+C:\Users\csakh\Desktop\team10\AtEaseWCF\AtEaseWCF\bin\AtEaseWCF.pdb
+C:\Users\csakh\Desktop\team10\AtEaseWCF\AtEaseWCF\obj\Debug\AtEaseWCF.csprojAssemblyReference.cache
+C:\Users\csakh\Desktop\team10\AtEaseWCF\AtEaseWCF\obj\Debug\AtEaseWCF.csproj.CoreCompileInputs.cache
+C:\Users\csakh\Desktop\team10\AtEaseWCF\AtEaseWCF\obj\Debug\AtEaseWCF.dll
+C:\Users\csakh\Desktop\team10\AtEaseWCF\AtEaseWCF\obj\Debug\AtEaseWCF.pdb

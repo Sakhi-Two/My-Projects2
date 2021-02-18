@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B046D230-B5A1-4748-A434-EB487C100125}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BBTapes1</RootNamespace>
+    <AssemblyName>BBTapes1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutProduct.aspx.cs">
+      <DependentUpon>AboutProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutProduct.aspx.designer.cs">
+      <DependentUpon>AboutProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Catalogue.aspx.cs">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogue.aspx.designer.cs">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\MyServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AboutProduct.aspx" />
+    <Content Include="audio\BoomBapBeat.mp3" />
+    <Content Include="Catalogue.aspx" />
+    <Content Include="Checkout.aspx" />
+    <None Include="Connected Services\MyServiceReference\BBTapesService.disco" />
+    <None Include="Connected Services\MyServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\MyServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\MyServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\flaticon.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Home.aspx" />
+    <Content Include="img\2-pac.jpg" />
+    <Content Include="img\about-1.jpg" />
+    <Content Include="img\about-2.jpg" />
+    <Content Include="img\Aesop Rock Impossible Kid.jpg" />
+    <Content Include="img\aesop-rock.jpg" />
+    <Content Include="img\Aesop.jpg" />
+    <Content Include="img\albam.jpg" />
+    <Content Include="img\Asap.jpg" />
+    <Content Include="img\BB Logo.png" />
+    <Content Include="img\beats.jpg" />
+    <Content Include="img\bg.jpeg" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\bg.png" />
+    <Content Include="img\big.png" />
+    <Content Include="img\blog\1.jpg" />
+    <Content Include="img\blog\2.jpg" />
+    <Content Include="img\blog\3.jpg" />
+    <Content Include="img\blog\4.jpg" />
+    <Content Include="img\blog\5.jpg" />
+    <Content Include="img\blog\6.jpg" />
+    <Content Include="img\blog\thumb\1.jpg" />
+    <Content Include="img\blog\thumb\2.jpg" />
+    <Content Include="img\boomBG.jpg" />
+    <Content Include="img\Brother-Ali.jpg" />
+    <Content Include="img\categories\1.jpg" />
+    <Content Include="img\categories\2.jpg" />
+    <Content Include="img\categories\3.jpg" />
+    <Content Include="img\categories\4.jpg" />
+    <Content Include="img\categories\5.jpg" />
+    <Content Include="img\categories\6.jpg" />
+    <Content Include="img\categories\7.jpg" />
+    <Content Include="img\categories\8.jpg" />
+    <Content Include="img\chart-bg.jpg" />
+    <Content Include="img\chart\1.jpg" />
+    <Content Include="img\chart\10.jpg" />
+    <Content Include="img\chart\2.jpg" />
+    <Content Include="img\chart\3.jpg" />
+    <Content Include="img\chart\4.jpg" />
+    <Content Include="img\chart\5.jpg" />
+    <Content Include="img\chart\6.jpg" />
+    <Content Include="img\chart\7.jpg" />
+    <Content Include="img\chart\8.jpg" />
+    <Content Include="img\chart\9.jpg" />
+    <Content Include="img\djs\1.jpg" />
+    <Content Include="img\djs\10.jpg" />
+    <Content Include="img\djs\2.jpg" />
+    <Content Include="img\djs\3.jpg" />
+    <Content Include="img\djs\4.jpg" />
+    <Content Include="img\djs\5.jpg" />
+    <Content Include="img\djs\6.jpg" />
+    <Content Include="img\djs\7.jpg" />
+    <Content Include="img\djs\8.jpg" />
+    <Content Include="img\djs\9.jpg" />
+    <Content Include="img\ear.jpg" />
+    <Content Include="img\facts\1.png" />
+    <Content Include="img\facts\2.png" />
+    <Content Include="img\facts\3.png" />
+    <Content Include="img\facts\4.png" />
+    <Content Include="img\favicon.ico" />
+    <Content Include="img\headBG.jpg" />
+    <Content Include="img\headset.jpg" />
+    <Content Include="img\headsets.jpg" />
+    <Content Include="img\headVBG.jpg" />
+    <Content Include="img\homeBG.png" />
+    <Content Include="img\icons\youtube.png" />
+    <Content Include="img\J-Cole.jpg" />
+    <Content Include="img\jehst.jpg" />
+    <Content Include="img\KRS.jpg" />
+    <Content Include="img\last.jpeg" />
+    <Content Include="img\Location.JPG" />
+    <Content Include="img\logic.jpg" />
+    <Content Include="img\logo-big.png" />
+    <Content Include="img\logo-small.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\map-marker.png" />
+    <Content Include="img\myPic.jpg" />
+    <Content Include="img\Nas.jpg" />
+    <Content Include="img\NBIG.jpg" />
+    <Content Include="img\page-info-bg.jpg" />
+    <Content Include="img\player.jpg" />
+    <Content Include="img\Pro-Era.jpg" />
+    <Content Include="img\Pro-Era.png" />
+    <Content Include="img\promo\1.jpg" />
+    <Content Include="img\promo\2.jpg" />
+    <Content Include="img\promo\3.jpg" />
+    <Content Include="img\services\1.jpg" />
+    <Content Include="img\services\2.jpg" />
+    <Content Include="img\services\3.jpg" />
+    <Content Include="Logout.aspx" />
+    <Content Include="img\shows\1.jpg" />
+    <Content Include="img\shows\2.jpg" />
+    <Content Include="img\shows\3.jpg" />
+    <Content Include="img\Third-Man-Records-Solo3-Beats-1024x576.jpg" />
+    <Content Include="img\umang-bbz.jpg" />
+    <Content Include="img\video-preview-bg.jpg" />
+    <Content Include="img\vinnie-paz.jpg" />
+    <Content Include="img\vinyl.jpg" />
+    <Content Include="img\yugen-blakrok.jpg" />
+    <Content Include="img\zinken_black_ae_limited.jpg" />
+    <Content Include="js\audio.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\circle-progress.min.js" />
+    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\map.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\wavesurfer.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="logincss\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="logincss\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="logincss\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="logincss\main.css" />
+    <Content Include="logincss\util.css" />
+    <Content Include="Registration.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="logincss\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="logincss\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="logincss\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="logincss\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="logincss\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="logincss\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="logincss\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Properties\DataSources\BBTapeService.AlbumInfo.datasource" />
+    <Content Include="Properties\DataSources\BBTapeService.UsersInfo.datasource" />
+    <Content Include="Properties\DataSources\BBTapeService.ArtistInfo.datasource" />
+    <None Include="Connected Services\MyServiceReference\BBTapesService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MyServiceReference\BBTapesService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MyServiceReference\BBTapesService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MyServiceReference\BBTapesService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MyServiceReference\Service1.wsdl" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="ShoppingCart.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BBTapeService\BBTapeService.csproj">
+      <Project>{2DE85AFD-4335-4AD9-BD84-2546896B0AD3}</Project>
+      <Name>BBTapeService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MyServiceReference\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2585</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2585/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

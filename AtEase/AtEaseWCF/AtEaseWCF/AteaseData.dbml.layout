@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.5" name="AteaseData">
+  <DataContextMoniker Name="/AteaseDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9822029a-a462-4e62-9222-dd820cdfe0d4" absoluteBounds="2.25, 1.625, 2, 1.7708968098958318">
+      <DataClassMoniker Name="/AteaseDataDataContext/Book" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a3306ce-c000-4014-ba1d-d875918edd9f" absoluteBounds="2.265, 2.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="761b6f4b-ca8e-479a-99a5-8b29b0fbb639" absoluteBounds="8.5, 7.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/AteaseDataDataContext/Feedback" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f9c5591-a3b1-4caf-a311-2ca0f9985477" absoluteBounds="8.515, 7.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55bcca37-7c9e-4d27-b344-3e7eef6ae741" absoluteBounds="6.5, 4.5, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/AteaseDataDataContext/Manager" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b3d538f-1153-4abc-8b98-d74f8390e165" absoluteBounds="6.515, 4.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1187ccb8-72cb-4361-8095-e3f87d9b7b9a" absoluteBounds="8.125, 1.25, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/AteaseDataDataContext/Merchant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e8a742b-9805-44b0-9473-9b9200e6f911" absoluteBounds="8.14, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e77abd44-23b4-43df-a3f7-c7496db5e14b" absoluteBounds="4.875, 1, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AteaseDataDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16cc873f-8dff-4c38-8ff4-1a1e76989ab2" absoluteBounds="4.89, 1.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48195325-7923-46b5-99af-fe87091364c4" absoluteBounds="6.25, 9.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/AteaseDataDataContext/Quotation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="887d0b79-d7ac-4708-b1cc-08a3ffa85a7f" absoluteBounds="6.265, 9.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5822d159-4395-45ae-b96e-7db1d76c8a7d" absoluteBounds="3.625, 7.125, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/AteaseDataDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79909688-1ab2-453c-837d-1ad613235002" absoluteBounds="3.64, 7.5850000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.34375 : 3.7901025390625); (9.34375 : 7.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AteaseDataDataContext/Merchant/Merchant_Feedback" />
+      <nodes>
+        <classShapeMoniker Id="1187ccb8-72cb-4361-8095-e3f87d9b7b9a" />
+        <classShapeMoniker Id="761b6f4b-ca8e-479a-99a5-8b29b0fbb639" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.4999975 : 4.5); (7.4999975 : 3.50405110677083); (8.125 : 3.50405110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AteaseDataDataContext/Manager/Manager_Merchant" />
+      <nodes>
+        <classShapeMoniker Id="55bcca37-7c9e-4d27-b344-3e7eef6ae741" />
+        <classShapeMoniker Id="1187ccb8-72cb-4361-8095-e3f87d9b7b9a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 2.39024983723958); (4.875 : 2.39024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AteaseDataDataContext/Book/Book_Product" />
+      <nodes>
+        <classShapeMoniker Id="9822029a-a462-4e62-9222-dd820cdfe0d4" />
+        <classShapeMoniker Id="e77abd44-23b4-43df-a3f7-c7496db5e14b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 2.20274983723958); (6.875 : 2.20274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AteaseDataDataContext/Merchant/Merchant_Product" />
+      <nodes>
+        <classShapeMoniker Id="1187ccb8-72cb-4361-8095-e3f87d9b7b9a" />
+        <classShapeMoniker Id="e77abd44-23b4-43df-a3f7-c7496db5e14b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.90625 : 3.39589680989583); (2.90625 : 10.470400390625); (6.25 : 10.470400390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AteaseDataDataContext/Book/Book_Quotation" />
+      <nodes>
+        <classShapeMoniker Id="9822029a-a462-4e62-9222-dd820cdfe0d4" />
+        <classShapeMoniker Id="48195325-7923-46b5-99af-fe87091364c4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 8.23159912109375); (8.5 : 8.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AteaseDataDataContext/Student/Student_Feedback" />
+      <nodes>
+        <classShapeMoniker Id="5822d159-4395-45ae-b96e-7db1d76c8a7d" />
+        <classShapeMoniker Id="761b6f4b-ca8e-479a-99a5-8b29b0fbb639" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 9.45755126953125); (6.25 : 9.45755126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AteaseDataDataContext/Student/Student_Quotation" />
+      <nodes>
+        <classShapeMoniker Id="5822d159-4395-45ae-b96e-7db1d76c8a7d" />
+        <classShapeMoniker Id="48195325-7923-46b5-99af-fe87091364c4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

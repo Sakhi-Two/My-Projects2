@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BBTapesdbml">
+  <DataContextMoniker Name="/BBTapesdbmlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="72a25489-f43a-429e-8002-bc9d6335fe29" absoluteBounds="6, 1.125, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/BBTapesdbmlDataContext/Album" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bcb5749d-268c-43ca-952d-e66ab209e068" absoluteBounds="6.0150000000000006, 1.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c662f32f-ed0a-4382-aa36-29666b3d7af9" absoluteBounds="8.25, 1.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BBTapesdbmlDataContext/Artist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6dd32707-c4ba-41e3-8bc1-c7e85b39ac13" absoluteBounds="8.265, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36ad4cdc-de50-41e1-8a30-dc7519e67399" absoluteBounds="0.75, 0.875, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/BBTapesdbmlDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b591d2e0-897a-4658-b879-567ee71cb3e4" absoluteBounds="0.76500000000000057, 1.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 2.16909912109375); (8 : 2.16909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BBTapesdbmlDataContext/Artist/Artist_Album" />
+      <nodes>
+        <classShapeMoniker Id="c662f32f-ed0a-4382-aa36-29666b3d7af9" />
+        <classShapeMoniker Id="72a25489-f43a-429e-8002-bc9d6335fe29" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0de2f32a-7505-4a64-973d-3c8492289cd3" absoluteBounds="3.5, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BBTapesdbmlDataContext/CartItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54fb3d39-d6dc-4eb2-ba01-71cfbc29da3f" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 1.85179768880208); (5.5 : 1.85179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BBTapesdbmlDataContext/Album/Album_CartItem" />
+      <nodes>
+        <classShapeMoniker Id="72a25489-f43a-429e-8002-bc9d6335fe29" />
+        <classShapeMoniker Id="0de2f32a-7505-4a64-973d-3c8492289cd3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.18835511575014); (3.5 : 2.18835511575014)]" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/BBTapesdbmlDataContext/User/User_CartItem" />
+      <nodes>
+        <classShapeMoniker Id="36ad4cdc-de50-41e1-8a30-dc7519e67399" />
+        <classShapeMoniker Id="0de2f32a-7505-4a64-973d-3c8492289cd3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

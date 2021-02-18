@@ -1,0 +1,8 @@
+Jack,2000
+Ntuli,999
+Cindi,566
+Smith,1200
+Nkosi,806
+PoleOne,0
+PoleTwo,0
+PoleThree,0

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49190/BBTapesService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49190/BBTapesService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49190/BBTapesService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BBTapeService" />
+      <xsd:import schemaLocation="http://localhost:49190/BBTapesService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BBTapesService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_Registered_InputMessage">
+    <wsdl:part name="parameters" element="tns:Registered" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_Registered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_EditAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditAlbum" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_EditAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_AddAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAlbum" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_AddAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_GetAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlbum" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_GetAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_getUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsers" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_getUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_isAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:isAlbum" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_isAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_getArtists_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtists" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_getArtists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_GetArtistAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistAlbum" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_GetArtistAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_AddToCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCart" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_AddToCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_getArtistName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtistName" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_getArtistName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtistNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_getCartItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItems" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_getCartItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_NewAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewAlbum" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_NewAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_SearchAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAlbum" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_SearchAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_DeleteAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlbum" />
+  </wsdl:message>
+  <wsdl:message name="BBTapesService_DeleteAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlbumResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BBTapesService">
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/Register" message="tns:BBTapesService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/RegisterResponse" message="tns:BBTapesService_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Registered">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/Registered" message="tns:BBTapesService_Registered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/RegisteredResponse" message="tns:BBTapesService_Registered_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/Login" message="tns:BBTapesService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/LoginResponse" message="tns:BBTapesService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/EditAlbum" message="tns:BBTapesService_EditAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/EditAlbumResponse" message="tns:BBTapesService_EditAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/AddAlbum" message="tns:BBTapesService_AddAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/AddAlbumResponse" message="tns:BBTapesService_AddAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/GetAlbum" message="tns:BBTapesService_GetAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/GetAlbumResponse" message="tns:BBTapesService_GetAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/getUsers" message="tns:BBTapesService_getUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/getUsersResponse" message="tns:BBTapesService_getUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/isAlbum" message="tns:BBTapesService_isAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/isAlbumResponse" message="tns:BBTapesService_isAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtists">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/getArtists" message="tns:BBTapesService_getArtists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/getArtistsResponse" message="tns:BBTapesService_getArtists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/GetArtistAlbum" message="tns:BBTapesService_GetArtistAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/GetArtistAlbumResponse" message="tns:BBTapesService_GetArtistAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/AddToCart" message="tns:BBTapesService_AddToCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/AddToCartResponse" message="tns:BBTapesService_AddToCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtistName">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/getArtistName" message="tns:BBTapesService_getArtistName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/getArtistNameResponse" message="tns:BBTapesService_getArtistName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCartItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/getCartItems" message="tns:BBTapesService_getCartItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/getCartItemsResponse" message="tns:BBTapesService_getCartItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/NewAlbum" message="tns:BBTapesService_NewAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/NewAlbumResponse" message="tns:BBTapesService_NewAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/SearchAlbum" message="tns:BBTapesService_SearchAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/SearchAlbumResponse" message="tns:BBTapesService_SearchAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/BBTapesService/DeleteAlbum" message="tns:BBTapesService_DeleteAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BBTapesService/DeleteAlbumResponse" message="tns:BBTapesService_DeleteAlbum_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_BBTapesService" type="tns:BBTapesService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registered">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/Registered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAlbum">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/EditAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAlbum">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/AddAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlbum">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/GetAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/getUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAlbum">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/isAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtists">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/getArtists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistAlbum">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/GetArtistAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToCart">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/AddToCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistName">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/getArtistName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartItems">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/getCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewAlbum">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/NewAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAlbum">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/SearchAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlbum">
+      <soap:operation soapAction="http://tempuri.org/BBTapesService/DeleteAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_BBTapesService" binding="tns:BasicHttpBinding_BBTapesService">
+      <soap:address location="http://localhost:49190/BBTapesService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

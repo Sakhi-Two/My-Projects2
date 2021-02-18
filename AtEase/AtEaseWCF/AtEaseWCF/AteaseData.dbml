@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ateaseData" Class="AteaseDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ateaseserver2.database.windows.net;Initial Catalog=ateaseData;User ID=Lindo;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ateaseDataConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Book" Member="Books">
+    <Type Name="Book">
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Book_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Book_Edition" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Book_Author" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Book_Product" Member="Products" ThisKey="ISBN" OtherKey="ISBN" Type="Product" />
+      <Association Name="Book_Quotation" Member="Quotations" ThisKey="ISBN" OtherKey="ISBN" Type="Quotation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Feedback" Member="Feedbacks">
+    <Type Name="Feedback">
+      <Column Name="feed_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Merchant_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stu_Num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reviews" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsRated" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Merchant_Feedback" Member="Merchant" ThisKey="Merchant_ID" OtherKey="Merchant_ID" Type="Merchant" IsForeignKey="true" />
+      <Association Name="Student_Feedback" Member="Student" ThisKey="Stu_Num" OtherKey="Stu_Num" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manager" Member="Managers">
+    <Type Name="Manager">
+      <Column Name="Manager_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Man_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Man_Surname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Man_Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Man_Contact" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Man_Password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Man_Image" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Manager_Merchant" Member="Merchants" ThisKey="Manager_ID" OtherKey="Manager_ID" Type="Merchant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Merchant" Member="Merchants">
+    <Type Name="Merchant">
+      <Column Name="Merchant_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Merch_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Merch_Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Merch_Contact" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Merch_Password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Merch_Strikes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Merch_Image" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Manager_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Merchant_Feedback" Member="Feedbacks" ThisKey="Merchant_ID" OtherKey="Merchant_ID" Type="Feedback" />
+      <Association Name="Merchant_Product" Member="Products" ThisKey="Merchant_ID" OtherKey="Merchant_ID" Type="Product" />
+      <Association Name="Manager_Merchant" Member="Manager" ThisKey="Manager_ID" OtherKey="Manager_ID" Type="Manager" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="Product_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Merchant_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Product_Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Product_Reviews" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Book_Product" Member="Book" ThisKey="ISBN" OtherKey="ISBN" Type="Book" IsForeignKey="true" />
+      <Association Name="Merchant_Product" Member="Merchant" ThisKey="Merchant_ID" OtherKey="Merchant_ID" Type="Merchant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Quotation" Member="Quotations">
+    <Type Name="Quotation">
+      <Column Name="Quote_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Stu_Num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Merchant_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Book_Quotation" Member="Book" ThisKey="ISBN" OtherKey="ISBN" Type="Book" IsForeignKey="true" />
+      <Association Name="Student_Quotation" Member="Student" ThisKey="Stu_Num" OtherKey="Stu_Num" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="Stu_Num" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Stu_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stu_Surname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stu_Contact" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stu_Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stu_Degree" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stu_Image" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Stu_Password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Student_Feedback" Member="Feedbacks" ThisKey="Stu_Num" OtherKey="Stu_Num" Type="Feedback" />
+      <Association Name="Student_Quotation" Member="Quotations" ThisKey="Stu_Num" OtherKey="Stu_Num" Type="Quotation" />
+    </Type>
+  </Table>
+</Database>
